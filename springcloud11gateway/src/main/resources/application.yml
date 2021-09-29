@@ -1,0 +1,26 @@
+server:
+  port: 7979
+spring:
+  application:
+    name: GATEWAY
+  cloud:
+    consul:
+      port: 8500
+      host: localhost
+    gateway:
+      routes:
+        - id: category_routery    #指定唯一标识
+          uri: http://localhost:8787  #指定路由服务的地址
+          predicates:     #断言  用来配置路由规则
+            - Path=/category/**
+
+        - id: product_routery    #指定唯一标识
+          #          uri: http://localhost:8788  #指定路由服务的地址
+          uri: lb://PRODUCT  #负载均衡
+          predicates:     #断言  用来配置路由规则
+            - Path=/product/**
+
+
+
+
+

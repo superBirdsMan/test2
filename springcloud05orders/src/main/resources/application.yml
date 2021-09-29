@@ -1,0 +1,9 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: ORDERS
+  cloud:
+    consul:
+      host: localhost
+      port: 8500

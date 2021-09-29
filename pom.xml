@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.my</groupId>
+    <artifactId>springcloud01</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <modules>
+        <module>springcloud01eureka_server</module>
+        <module>springcloud02eureka_client</module>
+        <module>springcloud03consulclient</module>
+        <module>springcloud04users</module>
+        <module>springcloud05orders</module>
+        <module>springcloud06category</module>
+        <module>springcloud07product</module>
+        <module>springcloud08_hystrix</module>
+        <module>springcloud09openfeign_hystrix</module>
+        <module>springcloud10hytrix_dashboard</module>
+        <module>springcloud11gateway</module>
+        <module>springcloud12configserver</module>
+        <module>springcloud13configclient</module>
+    </modules>
+
+    <parent>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <version>2.4.6</version>
+    </parent>
+
+    <properties>
+        <spring.cloud-version>2020.0.3</spring.cloud-version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud-version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+</project>
